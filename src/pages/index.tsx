@@ -1,11 +1,12 @@
-export default function Home() {
+import React from 'react';
+import { Navbar } from '../components/navbar';
+export default function HomePage() {
   return (
-    <div className="container flex items-center p-4 mx-auto min-h-screen justify-center">
-      <main>
-        <h1 className="font-mono text-xl code">
-          Welcome to <span className="text-purple-700">Nextjs</span>, <span className="text-indigo-700">TailwindCSS</span> and <span className="text-gray-700">TypeScript</span>
-        </h1>
-      </main>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <h1 className="text-5xl font-bold">Welcome to My Portfolio</h1>
+      <p className="mt-4 text-xl">I am trying to be a web developer specializing in React and Next.js.</p>
+    
+      <Navbar />
     </div>
   )
 }
