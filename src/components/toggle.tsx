@@ -7,14 +7,23 @@ const ThemeSwitcher: React.FC = () => {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
-
+  
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') setIsDarkMode(true);
+  }, []);
+  
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark'); 
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-  }, [isDarkMode]); 
+  }, [isDarkMode]);
+  
+   
 
   return (
     <button
