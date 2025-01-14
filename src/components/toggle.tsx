@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MoonIcon, SunIcon } from '@heroicons/react/outline'; 
 
 const ThemeSwitcher: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true); // Default to dark mode
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -10,7 +10,12 @@ const ThemeSwitcher: React.FC = () => {
   
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
-    if (storedTheme === 'dark') setIsDarkMode(true);
+    if (storedTheme) {
+      setIsDarkMode(storedTheme === 'dark');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
   }, []);
   
   useEffect(() => {
@@ -23,8 +28,6 @@ const ThemeSwitcher: React.FC = () => {
     }
   }, [isDarkMode]);
   
-   
-
   return (
     <button
       type="button"
@@ -32,9 +35,9 @@ const ThemeSwitcher: React.FC = () => {
       className="border-transparent text-center p-2 px-1 transition-all duration-300 ease-in-out"
     >
       {isDarkMode ? (
-        <SunIcon className="h-8 w-8 text-black-500" /> // Sun icon for light mode
+        <SunIcon className="h-8 w-8 text-white" /> 
       ) : (
-        <MoonIcon className="h-8 w-8 text-black-900" /> // Moon icon for dark mode
+        <MoonIcon className="h-8 w-8 text-black" /> 
       )}
     </button>
   );
