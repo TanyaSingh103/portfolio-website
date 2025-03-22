@@ -25,6 +25,13 @@ const PROJECTS: {
       techStack: 'Scikit-learn, Imbalanced-learn, Numpy, Pandas',
       previewImage: '/plagcheck.png',
       repoUrl: 'https://github.com/TanyaSingh103/PlagiarismCheck',
+    },
+    {
+      name: 'ProFolio',
+      description: 'Drag and Drop Portfolio Builder for Artistic Professionals',
+      techStack: 'React, Nhost, GraphQL, html2canvas, jsPDF',
+      previewImage: '/profolio.png',
+      repoUrl: 'https://github.com/Navya-Verma11/Profolio',
     }
   ]
   
