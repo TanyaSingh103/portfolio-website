@@ -11,7 +11,7 @@ export default function HomePage() {
       <h1 className="text-6xl font-bold pb-6">Tanya Singh</h1>
       <p className="mt-4 text-2xl">I'm a software developer</p>
       <p className="mt-4 text-xl pb-10">
-        also involved with machine learning and a ton of crafty hobbies
+        also involved with data engineering and a ton of crafty hobbies
       </p>
 
       <Navbar />
